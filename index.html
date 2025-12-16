@@ -2,13 +2,33 @@
 <html>
 <head>
   <title>Power BI Report</title>
+  <style>
+    .powerbi-button {
+      display: inline-block;
+      padding: 12px 24px;
+      margin: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #fff;
+      background-color: #0078d4;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .powerbi-button:hover {
+      background-color: #005a9e;
+    }
+  </style>
 </head>
 <body>
-  
-<a href="powerbi://app.powerbi.com/groups/me/reports/d846a4f1-0a93-41f4-b5a0-d5065d5fc6d3" target="_blank">
+
+<a class="powerbi-button" href="powerbi://app.powerbi.com/groups/me/reports/d846a4f1-0a93-41f4-b5a0-d5065d5fc6d3" target="_blank">
   Power BI Mobile App руу нээх
 </a>
-<a href="powerbi://reportId=d846a4f1-0a93-41f4-b5a0-d5065d5fc6d3">
+<a class="powerbi-button" href="powerbi://reportId=d846a4f1-0a93-41f4-b5a0-d5065d5fc6d3">
   Power BI Desktop руу нээх
 </a>
   
@@ -17,4 +37,5 @@
 </body>
 
 </html>
+
 
