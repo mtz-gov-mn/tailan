@@ -1,74 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <title>Responsive Power BI Embed</title>
-
-  <!-- Power BI JS SDK -->
-  <script src="https://cdn.jsdelivr.net/npm/powerbi-client@2.23.1/dist/powerbi.min.js"></script>
-
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      background: #f4f4f4;
-    }
-
-    #reportContainer {
-      width: 100%;
-      height: 100vh;
-      background: white;
-    }
-  </style>
+  <title>Power BI Report</title>
 </head>
 <body>
 
-  <div id="reportContainer"></div>
+<h2>My Power BI Dashboard</h2>
 
-  <script>
-    const models = window['powerbi-client'].models;
-    const container = document.getElementById('reportContainer');
-
-    function getLayoutType() {
-      return window.innerWidth < 600
-        ? models.LayoutType.MobilePortrait   // 📱 Phone
-        : models.LayoutType.Master;          // 🖥 Desktop
-    }
-
-    const embedConfig = {
-      type: 'report',
-      id: 'd846a4f1-0a93-41f4-b5a0-d5065d5fc6d3',
-      embedUrl: 'https://app.powerbi.com/reportEmbed?reportId=d846a4f1-0a93-41f4-b5a0-d5065d5fc6d3&autoAuth=true&ctid=ec1a860e-a684-4f3c-907b-892ca6820866',
-      accessToken: 'ec1a860e-a684-4f3c-907b-892ca6820866',
-      tokenType: models.TokenType.Embed,
-
-      settings: {
-        layoutType: getLayoutType(),
-        panes: {
-          filters: { visible: false },
-          pageNavigation: { visible: true }
-        }
-      }
-    };
-
-    let report = powerbi.embed(container, embedConfig);
-
-    // 🔄 Re-apply layout on resize
-    window.addEventListener('resize', () => {
-      report.updateSettings({
-        layoutType: getLayoutType()
-      });
-    });
-
-    report.on('loaded', () => {
-      console.log('Power BI report loaded with responsive layout');
-    });
-
-    report.on('error', event => {
-      console.error(event.detail);
-    });
-  </script>
+<iframe title="tailan" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiMWNiZmVmODAtYmEzNi00MTMxLTk5YzktZjVkNDliMjExOTgzIiwidCI6ImVjMWE4NjBlLWE2ODQtNGYzYy05MDdiLTg5MmNhNjgyMDg2NiIsImMiOjEwfQ%3D%3D" frameborder="0" allowFullScreen="true"></iframe>
+</iframe>
 
 </body>
+
 </html>
